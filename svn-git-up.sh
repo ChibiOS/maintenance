@@ -4,7 +4,7 @@ WORKING_COPY=chibios-svn-git
 
 cd $WORKING_COPY
 
-git svn fetch --authors-file=../authors.txt
+git svn fetch --authors-file=../authors.txt --use-log-author
 
 # list of needed branches
 BRANCHES="stable_1.0.x \
@@ -22,7 +22,7 @@ BRANCHES="stable_1.0.x \
 for B in $BRANCHES
 do
 	# echo $B
-	# uncomment next string needs for checkout untracked branches
+	# commented string needs only for untracked branches checkout
 	#git checkout -b $B origin/$B
 	git checkout $B
 	git svn rebase
