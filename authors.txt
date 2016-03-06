@@ -13,6 +13,7 @@ liamstask = Liam Staskawicz <liam@stask.net>
 like2wise = like2wise <none@example.com>
 michelwojdaszka = michelwojdaszka <none@example.com>
 pcirillo = pcirillo <none@example.com>
+roccomarco = Rocco Marco Guglielmi <roccomarco.guglielmi@live.com>
 spacecoaster = Derek Mulcahy <derekmulcahy@gmail.com>
 theShed = theShed <none@example.com>
 theshed = theshed <none@example.com>
