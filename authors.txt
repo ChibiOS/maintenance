@@ -18,6 +18,7 @@ spacecoaster = Derek Mulcahy <derekmulcahy@gmail.com>
 theShed = theShed <none@example.com>
 theshed = theshed <none@example.com>
 tinito = Martino Migliavacca <martino.migliavacca@gmail.com>
+tfateba = tfateba <none@example.com>
 trsaunders = trsaunders <none@example.com>
 utzig = Fabio Utzig <utzig@utzig.org>
 wan35fr = wan35fr <none@example.com>
