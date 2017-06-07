@@ -16,6 +16,7 @@ BRANCHES="stable_1.0.x \
 	stable_2.6.x \
 	stable_3.0.x \
 	stable_16.1.x \
+	stable_17.6.x \
 	trunk \
 	master"
 
