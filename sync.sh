@@ -41,7 +41,7 @@ fi
   echo Setting up additional mirrors
   for i in ${!EXTRA_GIT_MIRRORS[@]}
   do
-    git remote add ${i} ${EXTRA_GIT_MIRRORS[$i]}
+    git -C ${LOCAL_GIT} remote add ${i} ${EXTRA_GIT_MIRRORS[$i]}
   done
 
   echo Adding SVN config
@@ -68,18 +68,16 @@ then
   svnsync sync file://${LOCAL_SVN}
 
   echo Updating SVN refs...
-  cd ${LOCAL_GIT}
-  git svn fetch
+  git -C ${LOCAL_GIT} svn fetch
 fi
 
 if [[ "$1" == "push" ]]
 then
   echo Pushing to all git mirrors...
-  cd ${LOCAL_GIT}
   for i in $(git remote)
   do
-    git push $i --all
-    git push $i --tags
+    git -C ${LOCAL_GIT} push $i --all
+    git -C ${LOCAL_GIT} push $i --tags
   done
 fi
 
