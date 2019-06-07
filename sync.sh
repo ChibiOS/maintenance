@@ -8,7 +8,7 @@ REMOTE_GIT=git@github.com:ChibiOS/ChibiOS.git
 SVN_UUID=27425a3e-05d8-49a3-a47f-9c15f0e5edd8
 
 # Add spaces between mirrors ([name1]=value1 [name2]=value2). No spaces in names.
-EXTRA_GIT_MIRRORS=([bitbucket]=git@bitbucket.org:chibios/chibios.git)
+declare -A EXTRA_GIT_MIRRORS=([bitbucket]=git@bitbucket.org:chibios/chibios.git)
 
 if [ -z "$1" ]
   then
