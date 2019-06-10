@@ -19,11 +19,11 @@ fi
 if [[ "$1" == "init" ]]
 then
 
-if [ -d $BASE ]
-  then
-  echo repo already exists at ${BASE}
-  exit 1
-fi
+  if [ -d $BASE ]
+    then
+    echo repo already exists at ${BASE}
+#    exit 1
+  fi
 
   mkdir -p ${BASE}
   echo Creating SVN Mirror...
@@ -39,10 +39,12 @@ fi
   git clone ${REMOTE_GIT} ${LOCAL_GIT}
 
   echo Setting up additional mirrors
+  cd ${LOCAL_GIT}
   for i in ${!EXTRA_GIT_MIRRORS[@]}
   do
-    git -C ${LOCAL_GIT} remote add ${i} ${EXTRA_GIT_MIRRORS[$i]}
+    git remote add ${i} ${EXTRA_GIT_MIRRORS[$i]}
   done
+  cd ..
 
   echo Adding SVN config
   cp authors.txt ${BASE}/
@@ -66,18 +68,23 @@ if [[ "$1" == "update" ]]
 then
   echo Syncing SVN mirror...
   svnsync sync file://${LOCAL_SVN}
+  REV=$(svn info file://${LOCAL_SVN} | grep Revision | egrep -o "[0-9]+")
 
   echo Updating SVN refs...
-  git -C ${LOCAL_GIT} svn fetch
+  cd ${LOCAL_GIT}
+  git svn fetch
+  git svn reset ${REV} # git-svn sometimes ignores new revisions, this should help.
 fi
 
 if [[ "$1" == "push" ]]
 then
   echo Pushing to all git mirrors...
+  cd ${LOCAL_GIT}
   for i in $(git remote)
   do
-    git -C ${LOCAL_GIT} push $i --all
-    git -C ${LOCAL_GIT} push $i --tags
+    echo $i
+    git push $i --all
+    git push $i --tags
   done
 fi
 
