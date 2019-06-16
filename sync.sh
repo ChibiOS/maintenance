@@ -68,12 +68,18 @@ if [[ "$1" == "update" ]]
 then
   echo Syncing SVN mirror...
   svnsync sync file://${LOCAL_SVN}
-  REV=$(svn info file://${LOCAL_SVN} | grep Revision | egrep -o "[0-9]+")
 
   echo Updating SVN refs...
   cd ${LOCAL_GIT}
+  find .git/svn/refs/remotes/origin/ -name .rev_map* -delete # Force rebuilding revision maps
   git svn fetch
-  git svn reset ${REV} # git-svn sometimes ignores new revisions, this should help.
+  for i in $(git branch | cut -c 3-)
+  do
+    echo Updating branch: $i
+    git checkout $i
+    git rebase
+  done
+  git checkout master
 fi
 
 if [[ "$1" == "push" ]]
