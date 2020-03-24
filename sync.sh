@@ -54,6 +54,7 @@ then
         fetch = trunk:refs/remotes/origin/master
         fetch = branches/stable_18.2.x:refs/remotes/origin/stable_18.2.x
         fetch = branches/stable_19.1.x:refs/remotes/origin/stable_19.1.x
+        fetch = branches/stable_20.3.x:refs/remotes/origin/stable_20.3.x
         tags = tags/ver*:refs/tags/*
         rewriteRoot = svn://svn.code.sf.net/p/chibios/svn
         rewriteUUID = ${SVN_UUID}
