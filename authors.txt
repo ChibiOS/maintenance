@@ -26,3 +26,5 @@ fpoussin = Fabien Poussin <fabien.poussin@gmail.com>
 isiora = isiora <none@example.com>
 edolomb = edolomb <none@example.com>
 areviu = areviu <none@example.com>
+cinsights = cinsights <none@example.com>
+vrepetenko = vrepetenko <none@example.com>
