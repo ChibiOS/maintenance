@@ -29,3 +29,4 @@ areviu = areviu <none@example.com>
 cinsights = cinsights <none@example.com>
 vrepetenko = vrepetenko <none@example.com>
 akscram = akscram <none@example.com>
+tridge = akscram <none@example.com>
