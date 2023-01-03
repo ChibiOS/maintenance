@@ -3,7 +3,8 @@
 BASE=$HOME/mirrors
 LOCAL_SVN=${BASE}/chibios-svn
 LOCAL_GIT=${BASE}/chibios-git
-REMOTE_SVN=https://svn.osdn.net/svnroot/chibios/
+#REMOTE_SVN=https://svn.osdn.net/svnroot/chibios/ # Moved back to SF, see url below
+REMOTE_SVN=https://svn.code.sf.net/p/chibios/code/
 REMOTE_GIT=git@github.com:ChibiOS/ChibiOS.git
 SVN_UUID=27425a3e-05d8-49a3-a47f-9c15f0e5edd8
 
@@ -93,7 +94,7 @@ then
   do
     echo $i
     git push $i --all
-    git push $i --tags
+    git push $i --tags --force
   done
 fi
 
