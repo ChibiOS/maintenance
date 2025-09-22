@@ -30,3 +30,6 @@ cinsights = cinsights <none@example.com>
 vrepetenko = vrepetenko <none@example.com>
 akscram = akscram <none@example.com>
 tridge = akscram <none@example.com>
+fxcoder = fxcoder <none@example.com>
+simodido = simodido <none@example.com>
+teknoman117 = teknoman117 <none@example.com>
