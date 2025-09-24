@@ -32,4 +32,4 @@ akscram = akscram <none@example.com>
 tridge = akscram <none@example.com>
 fxcoder = fxcoder <none@example.com>
 simodido = simodido <none@example.com>
-teknoman117 = teknoman117 <none@example.com>
+teknoman117 = Nathan Lewis <git@nrlewis.dev>
