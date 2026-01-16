@@ -40,12 +40,13 @@ then
   git clone ${REMOTE_GIT} ${LOCAL_GIT}
 
   echo Setting up additional mirrors
+  pushd .
   cd ${LOCAL_GIT}
   for i in ${!EXTRA_GIT_MIRRORS[@]}
   do
     git remote add ${i} ${EXTRA_GIT_MIRRORS[$i]}
   done
-  cd ..
+  popd
 
   echo Adding SVN config
   cp authors.txt ${BASE}/
