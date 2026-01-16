@@ -28,13 +28,13 @@ then
 
   mkdir -p ${BASE}
   echo Creating SVN Mirror...
-  svnadmin create ${LOCAL_SVN} ${REMOTE_SVN}
-  mkdir ${LOCAL_SVN}/hooks
+  svnadmin create ${LOCAL_SVN}
+  mkdir -p ${LOCAL_SVN}/hooks
   echo '#!/bin/sh' > ${LOCAL_SVN}/hooks/pre-revprop-change
   chmod 755 ${LOCAL_SVN}/hooks/pre-revprop-change
 
   echo Syncing SVN mirror for the first time, this will take a while...
-  svnsync sync file://${LOCAL_SVN}
+  svnadmin init file://${LOCAL_SVN} ${REMOTE_SVN}
 
   echo Cloning from git...
   git clone ${REMOTE_GIT} ${LOCAL_GIT}
